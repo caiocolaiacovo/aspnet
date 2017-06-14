@@ -18,6 +18,6 @@ namespace Codefirst.Models
         public DateTime Date { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual Author Author { get; set; }
+        public virtual Person Author { get; set; }
     }
 }

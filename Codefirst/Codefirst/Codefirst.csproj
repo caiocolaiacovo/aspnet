@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -105,11 +106,20 @@
     <Compile Include="Migrations\201706140035249_AddingModels.Designer.cs">
       <DependentUpon>201706140035249_AddingModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706140109242_AbstractPerson.cs" />
+    <Compile Include="Migrations\201706140109242_AbstractPerson.Designer.cs">
+      <DependentUpon>201706140109242_AbstractPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706140120597_AddingUser.cs" />
+    <Compile Include="Migrations\201706140120597_AddingUser.Designer.cs">
+      <DependentUpon>201706140120597_AddingUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706132315196_Initial.resx">
@@ -133,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706140035249_AddingModels.resx">
       <DependentUpon>201706140035249_AddingModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706140109242_AbstractPerson.resx">
+      <DependentUpon>201706140109242_AbstractPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706140120597_AddingUser.resx">
+      <DependentUpon>201706140120597_AddingUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

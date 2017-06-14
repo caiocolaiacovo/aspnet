@@ -5,7 +5,10 @@ using System.Web;
 
 namespace Codefirst.Models
 {
-    public class Author : Person
+    public enum Role
     {
+            Basic = 1,
+            Moderator,
+            Admin
     }
 }
