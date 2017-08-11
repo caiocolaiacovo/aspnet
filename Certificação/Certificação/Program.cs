@@ -22,15 +22,15 @@ namespace Certificação
                     short x = (short)y;
 
                     Console.WriteLine(x);
-                
+
                 }
             }
-            catch(OverflowException ex)
+            catch (OverflowException ex)
             {
                 Console.WriteLine("deu ruim");
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("heuehue");
             }
@@ -54,29 +54,69 @@ namespace Certificação
             Console.WriteLine(string.Format("0:hh:mm = {0:hh:mm}", date));
             Console.WriteLine(string.Format("0:dd/mm/yy = {0:dd/MM/yy}", date));
 
-            Debug.Assert(1 != 1, "teste");
+            //Debug.Assert(1 != 1, "teste");
 
-            foreach (var a in testFunction())
+            foreach (var an in testFunction())
                 Console.WriteLine("a");
-            
+
             myList.Add(1);
             myList.Add(2);
             myList.Add(3);
             myList.Add(4);
             myList.Add(5);
+            myList.Add(6);
 
-            
+            Teste a = new Teste();
+            Teste b = new Teste();
+
+            if (a == a)
+                Console.WriteLine("a == a");
+
+            if (a == b)
+                Console.WriteLine("a == b");
+
+            if (b == b)
+                Console.WriteLine("b == b");
 
             foreach (int i in RunningTotal())
             {
                 Console.WriteLine(i);
             }
 
-            var b = testFunction();
-            
+            var bn = testFunction();
+            meuMetodo();
+            try
+            {
 
+
+                meuMetodo();
+            }
+            catch
+            {
+                Console.WriteLine("finali2");
+            }
             Console.ReadKey();
         }
+
+        static void meuMetodo()
+        {
+            try
+            {
+                var arrei = new Array[1];
+
+                Console.WriteLine(arrei[2]);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                Console.WriteLine("finali");
+            }
+        }
+
+        
 
         static IEnumerable<int> RunningTotal()
         {
@@ -93,6 +133,10 @@ namespace Certificação
         static IEnumerable<int> testFunction()
         {
             var a = Math.Sqrt(153);
+            
+            int t = 0x1000000;
+
+            var asd = int.MaxValue;
 
             if (a > 0)
             {
@@ -118,6 +162,26 @@ namespace Certificação
             public static void Save<T>(T target) where T : Teste, new()
             {
 
+            }
+
+            public static bool operator ==(Teste a, Teste b)
+            {
+                return true;
+            }
+
+            public  static bool operator !=(Teste a, Teste b)
+            {
+                return true;
+            }
+
+            public override bool Equals(object obj)
+            {
+                return base.Equals(obj);
+            }
+
+            public override int GetHashCode()
+            {
+                return base.GetHashCode();
             }
         }
     }
